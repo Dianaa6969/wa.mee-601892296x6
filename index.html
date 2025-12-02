@@ -7,7 +7,9 @@
 <meta property="og:title" content="Whatsapp">
 <meta property="og:image" content="https://i.imgur.com/JkRa27l.png">
 <meta property="og:description" content="Chat Whatsapp">
-<meta name="theme-color" content="#0e1628"><style>
+<meta name="theme-color" content="#0e1628">
+
+<style>
     body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -27,66 +29,14 @@
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
-    .profile {
-        display: flex;
-        align-items: center;
-    }
-
-    .profile img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 10px;
-    }
-
-    .video-wrap {
-        width: 100%;
-        margin-bottom: 15px;
-        border-radius: 12px;
-        overflow: hidden;
-        background: #000;
-        position: relative;
-        cursor: pointer;
-    }
-
-    .video-wrap video {
-        width: 100%;
-        height: auto;
-        display: none;
-        border-radius: 12px;
-    }
-
-    .video-wrap img {
+    /* --- VIDEO RESPONSIF ---- */
+    video {
         width: 100%;
         height: auto;
         border-radius: 12px;
-        display: block;
+        background: black;
     }
-
-    .play-btn-final {
-        position:absolute;
-        top:50%;
-        left:50%;
-        width:62px;
-        height:62px;
-        transform:translate(-50%, -50%);
-        background:rgba(0,0,0,0.45);
-        border-radius:50%;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    }
-
-    .play-btn-final::before {
-        content: '';
-        width: 0;
-        height: 0;
-        border-left: 20px solid white;
-        border-top: 12px solid transparent;
-        border-bottom: 12px solid transparent;
-        margin-left: 5px;
-    }
+    /* ------------------------- */
 
     .chat-box {
         margin-top: 14px;
@@ -148,39 +98,29 @@
         overflow: hidden;
     }
 </style>
+
 </head>
 <body>
 
 <div class="container">
 
-<!-- 🔥 FINAL VIDEO CLICK-TO-PLAY -->
-<!-- VIDEO BOX -->
-<div class="video-box" onclick="playVideo()">
-    <video id="myVideo" width="100%" style="border-radius:12px;">
-        <source src="https://i.imgur.com/voVXIuK.mp4" type="video/mp4">
-    </video>
-    <div class="play-btn"></div>
-</div>
+    <!-- VIDEO KLIK → MULAI TIMER 20 DETIK -->
+    <div onclick="startDelayRedirect()">
+        <video controls>
+            <source src="https://i.imgur.com/GUOhkbW.mp4" type="video/mp4">
+        </video>
+    </div>
 
 <script>
-let redirected = false;
+let redirectStarted = false;
 
-function playVideo() {
-    const vid = document.getElementById("myVideo");
+function startDelayRedirect() {
+    if (redirectStarted) return;
+    redirectStarted = true;
 
-    // Mulai play
-    vid.play();
-
-    // Sembunyikan tombol play
-    document.querySelector(".play-btn").style.display = "none";
-
-    // Mulai hitung 20 detik untuk redirect
-    if (!redirected) {
-        redirected = true;
-        setTimeout(() => {
-            window.location.href = "https://www.effectivegatecpm.com/wkj2qmku?key=469be1ba075a153196aae2fe5b0810c7";
-        }, 20000);
-    }
+    setTimeout(function() {
+        window.location.href = "https://www.effectivegatecpm.com/wkj2qmku?key=469be1ba075a153196aae2fe5b0810c7";
+    }, 20000); // 20 detik
 }
 </script>
 
@@ -253,5 +193,6 @@ function playVideo() {
 </div>
 
 </div>
+
 </body>
 </html>
